@@ -1,0 +1,1 @@
+Com base no compartilhamento do exemplo "Biblioteca de Pilha com Vetor Dinâmico", proponha uma nova biblioteca similar para com as funções de Fila (enqueue, dequeue, etc.). Incremente um menu para o usuário de modo a pertir o uso das funcionalidades da biblioteca.

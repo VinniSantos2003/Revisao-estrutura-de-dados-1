@@ -1,0 +1,35 @@
+Lista 1: Exercícios de Nível 0 - revisão geral
+
+Instruções: Desenvolver projeto C/C++ via DevCpp para cada questão, usando o padrão de projeto de programação modular prototipada. Enviar ZIP com os diretórios dedicados à cada questão de projeto, incluindo o Makefile de cada (remover os arquivos .o e .exe, manter os demais).
+
+---
+
+1) Desenvolva um programa que implemente um vetor dinâmico para cadastrar usuários que possuem as informações: Nome, RG, CPF, Endereço. Logo, o programa deve apresentar um menu com as seguintes funções básicas: 1- Cadastrar novo usuário; 2- Exibir usuários cadastrados; 3- Exibir quantidade de usuários cadastrados; 4- Remover último usuário cadastrado; 5- Sair. As funcionalidades de menu deverão ser prototipadas em funções por passagem de dados por referência.
+
+2) Evolua a questão 1 anterior de modo a manter um arquivo em disco com as informações de usuários manipulados, permitindo inclusive a abertura futura pelo programa via adição de um menu: “Carregar base de dados do arquivo” (assim, tais informações serão armazenadas em memória dinâmica, como disposto na questão 1, para continuação de uso dos menu de opções). 
+
+3) Desenvolva uma solução prototipada para um programa de biblioteca, capaz de manipular (ler/escrever) um arquivo com as informações de livros, prevendo os comandos e ações: Tela principal: 1- Cadastrar livro 2- Consultar todos os livros 3- Sair. As funcionalidades de menu deverão ser prototipadas em funções por passagem de dados por referência. Exemplo de telas abaixo.
+
+---
+
+Tela “Cadastrar” – exemplo:
+
+Informe nome: E o vento levou 
+
+Informe cod.: 1 
+
+Informe autor: Silva
+
+Informe ano pub.: 2000 
+
+---
+
+Após a tela de cadastro, apresentar mensagem “Cadastro efetuado!” e retornar para tela principal. 
+
+---
+
+Tela “Consultar” – exemplo: 
+
+Nomes Livros | Codigo | Autor | Ano
+
+> Obs.: Exibir informações tabuladas na tela. Deixar o usuário pressionar tecla qualquer para assim retornar para tela principal. Veja que o Cadastro e Consulta devem funcionar com base na escrita/leitura do arquivo

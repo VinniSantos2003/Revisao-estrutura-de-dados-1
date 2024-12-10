@@ -1,0 +1,21 @@
+> Com base no projeto de biblioteca de Lista Encadeada Simples (compartilhado ZIP), faça as melhorias/modificações:
+
+a) Inclua os métodos/funções na biblioteca, descritos:
+
+- Imprime_inicio() - imprime nó-dado no início da lista (já feito em aula);
+
+- Imprime_fim() - imprime o nó-dado no fim da lista;
+
+- Insere_fim() - deverá inserir um novo nó-dado no fim da lista;
+
+- Remove_inicio() - remove nó-dado no início da lista;
+
+- Remove_fim() - remove nó-dado no fim da lista;
+
+- Ocorrencias(int x) - retorna o número de ocorrências de um dado valor x inteiro informado pelo usuário na lista (lembrando que a lista poderá conter dados repetidos);
+
+b) Adicionar os métodos não recursivos, retira e libera, exemplificados no material e aulas (na seção 10.2 – Cap. 10);
+
+c) Adiconar funções recursivas tratadas na seção 10.2 – Cap. 10: imprime_recursiva, retira_recursiva, libera_recursiva.
+
+d) Faça um menu interativo no "main" que permita interação com o usuário via menu e uso de todas as funções da biblioteca de manipulação da lista.
