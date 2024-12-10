@@ -22,36 +22,54 @@ bool isEmpty(FE * L){
 }
 
 FE * enqueue(FE *L,int d){
-    FE * newFE = (FE*)malloc(sizeof(FE));
-    newFE->dado = d;
-    if(isEmpty(L)){
-        newFE->prox = newFE;
-        return newFE;
+    FE * novaFilaEncadeada = (FE*)malloc(sizeof(FE));
+    novaFilaEncadeada->dado = d;
+    if(isEmpty(L)){//PRIMEIRA ENTRADA DE DADO
+        novaFilaEncadeada->prox = novaFilaEncadeada;
+        return novaFilaEncadeada;
     }
     //Condicional para dois dados
     if(L->prox == L){
-        newFE->prox = L;
-        L->prox = newFE;
+        novaFilaEncadeada->prox = L;
+        L->prox = novaFilaEncadeada;
     }else{//Condicional para 3 ou mais
         //Rodar um loop at achar o primeiro dado da fila(primeiro a sair [é o cara que aponta pro ultimo que entrou])
         FE * temp = L;
-        while(temp->prox !=L){
+        while(temp->prox != L){
             temp = temp->prox;
         }
-        newFE->prox = L;
-        temp->prox = newFE;
+        novaFilaEncadeada->prox = L;
+        temp->prox = novaFilaEncadeada;
         
     }
-
-    return newFE;
-
+    return novaFilaEncadeada;
 }
+
+FE * dequeue(FE *L){
+    //Ultimo dado a ser apagado, rodar loop até antes do ultimo dado;
+    if(L->prox == L){
+        free(L);
+        return inicializar();
+    }
+
+    FE * temp = L;
+    while(temp->prox->prox != L){
+        temp = temp->prox;
+    }
+    free(temp->prox);
+    temp->prox = L;
+    return L;
+}
+
 
 int main(){
 
     FE * L = inicializar();
-    L = enqueue(L,1);
-    L = enqueue(L,2);
-    L = enqueue(L,3);
+    int i=0;
+    while(i!=1){
+        L=enqueue(L,i);
+        i++;
+    }
+    L=dequeue(L);
     return 0;
 }
