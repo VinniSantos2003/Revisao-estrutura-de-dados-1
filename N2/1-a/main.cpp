@@ -23,16 +23,15 @@ bool isEmpty(FE * L){
 
 FE * enqueue(FE *L,int d){
     FE * novaFilaEncadeada = (FE*)malloc(sizeof(FE));
+    if(novaFilaEncadeada == nullptr){
+        cout << "Erro ao alocar memoria\n";
+        return L;
+    }
     novaFilaEncadeada->dado = d;
     if(isEmpty(L)){//PRIMEIRA ENTRADA DE DADO
         novaFilaEncadeada->prox = novaFilaEncadeada;
         return novaFilaEncadeada;
-    }
-    //Condicional para dois dados
-    if(L->prox == L){
-        novaFilaEncadeada->prox = L;
-        L->prox = novaFilaEncadeada;
-    }else{//Condicional para 3 ou mais
+    }else{
         //Rodar um loop at achar o primeiro dado da fila(primeiro a sair [é o cara que aponta pro ultimo que entrou])
         FE * temp = L;
         while(temp->prox != L){
@@ -47,6 +46,10 @@ FE * enqueue(FE *L,int d){
 
 FE * dequeue(FE *L){
     //Ultimo dado a ser apagado, rodar loop até antes do ultimo dado;
+    if(L == nullptr){
+        cout << "Lista vazia\n";
+        return L;
+    }
     if(L->prox == L){
         free(L);
         return inicializar();
@@ -65,11 +68,17 @@ FE * dequeue(FE *L){
 int main(){
 
     FE * L = inicializar();
-    int i=0;
-    while(i!=1){
+    //int i=0;
+    /*
+    while(i!=3){
         L=enqueue(L,i);
         i++;
-    }
-    L=dequeue(L);
+    }*/
+    L=enqueue(L,1); //entra o 1 (primeiro dado a ser inserido)
+    L=enqueue(L,2);// entra o 2
+    L=enqueue(L,3);//entra o 3
+    L=enqueue(L,4);//entra o 4
+    L=dequeue(L);//Sai o 1
+    L=enqueue(L,5);//entrao 5
     return 0;
 }
